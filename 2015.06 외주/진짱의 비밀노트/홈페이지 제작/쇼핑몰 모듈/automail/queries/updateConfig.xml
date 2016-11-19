@@ -1,0 +1,14 @@
+<query id="updateConfig" action="update">
+	<tables>
+		<table name="automail_config" />
+	</tables>
+	<columns>
+		<column name="sender_name" var="sender_name" />
+		<column name="sender_email" var="sender_email" />
+		<column name="mail_content" var="mail_content" />
+		<column name="regdate" var="regdate" default="curdate()" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="config_srl" var="config_srl" notnull="notnull" />
+	</conditions>
+</query>

@@ -1,0 +1,20 @@
+<div class="category-list shoe-container newclearfix">
+	<div class="newclearfix">
+		<h1 id="category-title">
+			<!--@if($parent_category_info->category_name=='홈' || $parent_category_info->category_name=='Home')-->
+				<!--@if($mi->title)-->{$mi->title}<!--@elseif($module_info->browser_title)-->{$module_info->browser_title}<!--@endif-->
+			<!--@else-->
+				{@ $catei = 0; }
+				<block loop="$category_info->route=>$key,$val" cond="$val && $catei == 0">
+					<a href="{getUrl('category',$val,'document_srl','','item_srl','')}">{$entire_category_index[$val]->category_name}</a>
+					{@ $catei++; }
+				</block>
+			<!--@endif-->
+		</h1>
+	</div>
+	<div class="newclearfix">
+		<ul id="category-list">
+			<li class="cate" loop="$category_list=>$no,$val"><a href="{getUrl('category',$val->node_id,'document_srl','','item_srl','')}#item-list-title" class="current"|cond="$category==$val->node_id">{$val->category_name}</a></li>
+		</ul>
+	</div>
+</div>

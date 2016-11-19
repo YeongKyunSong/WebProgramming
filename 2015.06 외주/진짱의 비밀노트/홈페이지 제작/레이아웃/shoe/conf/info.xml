@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+<title xml:lang="ko">Shoe Layout</title>
+<description xml:lang="ko">Shoe Layout</description>
+<version>1.0.0</version>
+<date>2015-03-31</date>
+<author email_address="mail@cameron.co.kr" link="http://cameron.co.kr/">
+	<name xml:lang="ko">CAMERON</name>
+</author>
+
+<extra_vars>
+	<group>
+		<title xml:lang="ko">기본설정</title>
+		<var name="logo" type="image">
+			<title xml:lang="ko">로고 이미지</title>
+		</var>
+		<var name="logo_y" type="text">
+			<title xml:lang="ko">로고 이미지 위치</title>
+			<description xml:lang="ko">기본 0(px) ※ 숫자만 입력하세요. 입력한 숫자만큼 상단에서 띄웁니다.</description>
+		</var>
+		<var name="logo_link" type="text">
+			<title xml:lang="ko">로고 링크URL</title>
+			<description xml:lang="ko">예) /home ※ 입력하지 않으면 홈으로 이동합니다.</description>
+		</var>
+		<var name="layout_type" type="select">
+			<title xml:lang="ko">메인/서브형</title>
+			<options value="sub">
+				<title xml:lang="ko">서브형</title>
+			</options>
+			<options value="main">
+				<title xml:lang="ko">메인형</title>
+			</options>
+		</var>
+		<var name="ccs" type="text">
+			<title xml:lang="ko">사용자 컬러셋</title>
+			<description xml:lang="ko">예) #d35460</description>
+		</var>
+	</group>
+
+	<group>
+		<title xml:lang="ko">검색폼/배너/사이트정보</title>
+		<var name="search_text" type="text">
+			<title xml:lang="ko">검색폼 기본검색어</title>
+			<description xml:lang="ko">예) 맥북에어 ※ 입력하지 않으면 search..</description>
+		</var>
+		<var name="banner" type="image">
+			<title xml:lang="ko">상단 배너</title>
+		</var>
+		<var name="banner_link" type="text">
+			<title xml:lang="ko">상단 배너 링크</title>
+		</var>
+		<var name="site_info" type="image">
+			<title xml:lang="ko">사이트정보 이미지</title>
+		</var>
+		<var name="footer_bottom" type="image">
+			<title xml:lang="ko">기타정보 이미지</title>
+		</var>
+	</group>
+
+	<group>
+		<title xml:lang="ko">퀵메뉴 애드온</title>
+		<var name="quick" type="select">
+			<title xml:lang="ko">퀵 사용</title>
+			<options value="on">
+				<title xml:lang="ko">퀵 애드온을 켜 주세요.</title>
+			</options>
+		</var>
+		<var name="quick_top" type="text">
+			<title xml:lang="ko">애드온 상단 위치</title>
+			<description xml:lang="ko">기본 236(px) ※ 숫자만 입력하세요.</description>
+		</var>
+		<var name="quick_left" type="text">
+			<title xml:lang="ko">애드온 좌측 위치</title>
+			<description xml:lang="ko">기본 15(px) ※ 숫자만 입력하세요.</description>
+		</var>
+		<var name="quick_width" type="text">
+			<title xml:lang="ko">애드온 가로 사이즈</title>
+			<description xml:lang="ko">기본 110(px) ※ 숫자만 입력하세요.</description>
+		</var>
+		<var name="recent_items" type="select">
+			<title xml:lang="ko">[최근 본 상품]</title>
+			<options value="off">
+				<title xml:lang="ko">미사용</title>
+			</options>
+			<options value="on">
+				<title xml:lang="ko">사용</title>
+			</options>
+		</var>
+<!--//
+		<var name="recent_items_count" type="select">
+			<title xml:lang="ko">[최근 본 상품] 리스트 갯수</title>
+			<description xml:lang="ko">한 페이지 당 표시되는 갯수입니다.</description>
+			<options value="4">
+				<title xml:lang="ko">4</title>
+			</options>
+			<options value="3">
+				<title xml:lang="ko">3</title>
+			</options>
+			<options value="2">
+				<title xml:lang="ko">2</title>
+			</options>
+			<options value="1">
+				<title xml:lang="ko">1</title>
+			</options>
+		</var>
+-->
+		<var name="recent_thumb_width" type="text">
+			<title xml:lang="ko">[최근 본 상품] 썸네일 가로 사이즈</title>
+			<description xml:lang="ko">미입력시 110(px) ※ 숫자만 입력하세요.</description>
+		</var>
+		<var name="recent_thumb_height" type="text">
+			<title xml:lang="ko">[최근 본 상품] 썸네일 세로 사이즈</title>
+			<description xml:lang="ko">미입력시 110(px) ※ 숫자만 입력하세요.</description>
+		</var>
+		<var name="quick_banner_top" type="textarea">
+			<title xml:lang="ko">[퀵배너] 상단</title>
+			<description xml:lang="ko">HTML태그로 입력하세요.</description>
+		</var>
+		<var name="quick_banner_bottom" type="textarea">
+			<title xml:lang="ko">[퀵배너] 하단</title>
+			<description xml:lang="ko">HTML태그로 입력하세요.</description>
+		</var>
+	</group>
+
+	<group>
+		<title xml:lang="ko">사용자 CSS</title>
+		<var name="custom_css" type="textarea">
+			<title xml:lang="ko">사용자 CSS 수정</title>
+			<description xml:lang="ko">예)#footer{display:none} ※ 패치시 유지됩니다.</description>
+		</var>
+	</group>
+
+</extra_vars>
+
+<menus>
+	<menu name="global_nav" maxdepth="3" default="true">
+		<title xml:lang="ko">메인메뉴</title>
+	</menu>
+	<menu name="header_nav" maxdepth="1">
+		<title xml:lang="ko">탑메뉴</title>
+	</menu>
+	<menu name="footer_nav" maxdepth="1">
+		<title xml:lang="ko">하단메뉴</title>
+	</menu>
+	<menu name="quick_nav" maxdepth="1">
+		<title xml:lang="ko">퀵메뉴</title>
+	</menu>
+</menus>
+</layout>

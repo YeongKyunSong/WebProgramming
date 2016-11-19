@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions />
+    <actions>
+        <action name="dispAutomailAdminList" type="view" />
+        <action name="dispAutomailAdminInsert" type="view" />
+        <action name="dispAutomailAdminModify" type="view" />
+		<action name="dispAutomailAdminSet" type="view" />
+		
+        <action name="getAutomailAdminDelete" type="model" />
+
+        <action name="procAutomailAdminInsert" type="controller"  />
+        <action name="procAutomailAdminDelete" type="controller"  />
+		<action name="procAutomailAdminSet" type="controller"  />
+		<action name="procAutomailAdminModify" type="controller" />
+    </actions>
+</module>

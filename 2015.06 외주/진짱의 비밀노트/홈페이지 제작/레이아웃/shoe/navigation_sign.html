@@ -1,0 +1,15 @@
+<nav id="sign-nav" class="header-nav newclearfix">
+	<ul>
+		<!--@if($is_logged)-->
+			<li><a href="{getUrl('act','dispMemberLogout')}" tabindex="3">LOGOUT</a></li>
+			<li><a href="{getUrl('act','dispMemberInfo')}" tabindex="4">MYPAGE</a></li>
+		<!--@else-->
+			<li><a href="{getUrl('act','dispMemberLoginForm')}" tabindex="3">LOGIN</a></li>
+			<li><a href="{getUrl('act','dispMemberSignUpForm')}" tabindex="4">JOIN</a></li>
+		<!--@endif-->
+		<li><a href="{getUrl('','mid','cart')}" tabindex="5">CART</a></li>
+		<li><a href="{getUrl('','mid','cart','act','dispNcartFavoriteItems')}" tabindex="6">WISH</a></li>
+		<li><a href="{getUrl('','mid','orders')}" tabindex="7">ORDERS</a></li>
+		<li cond="$logged_info->is_admin == 'Y'" class="admin-link"><a href="{getUrl('','module','admin')}" target="_blank">ADMIN SITE</a>/<a href="{getUrl('','module','cympusadmin')}" target="_blank">SHOP</a></li>
+	</ul>
+</nav>

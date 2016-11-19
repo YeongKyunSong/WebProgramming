@@ -1,0 +1,47 @@
+<div cond="$XE_VALIDATOR_MESSAGE" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+
+<form action="./" class="x_form-horizontal" method="post">
+	<input type="hidden" name="module" value="automail" />
+	<input type="hidden" name="act" value="procAutomailAdminInsert" />
+    <input type="hidden" name="config_srl" value="{$config->config_srl}" />
+    <input type="hidden" name="mail_content" value="{htmlspecialchars($config->mail_content)}" />
+    <input type="hidden" name="success_return_url" value="{getRequestUriByServerEnviroment()}" />
+	<input type="hidden" name="config_srl" value="{$config->config_srl}" />
+	<input type="hidden" name="target_module" value="{$config->target_module}" />
+	<input type="hidden" name="config_key" value="{$config->config_key}" />
+
+	<section class="section" style="">
+		<h2>{$lang->title_email}</h2>
+		<div class="x_control-group">
+			<label class="x_control-label">{$lang->sender_info}</label>
+			<div class="x_controls">
+				{$lang->cmd_name} : <input type="text" name="sender_name" style="width:100px;" value="{$config->sender_name}" />
+				{$lang->mail_content} : <input type="text" name="sender_email" style="width:240px;" value="{$config->sender_email}" />
+				<a href="#config_sender_email_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+				<p id="config_sender_email_help" class="x_help-block" hidden>{$lang->help_sender_email}</p>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label">{$lang->mail_title}</label>
+			<div class="x_controls">
+				<input type="text" name="mail_title" value="{$config->mail_title}" />
+				<a href="#mail_title_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+				<p id="mail_title_help" class="x_help-block" hidden>{$lang->help_mail_title}</p>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label">{$lang->mail_content}</label>	
+			<div class="x_controls"  id="editor">
+				<a href="#mail_content_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+				<p id="mail_content_help" class="x_help-block" hidden>{$lang->help_mail_content}</p>
+				<div>{$editor}</div>
+			</div>
+		</div>
+	</section>	
+
+	<div class="btnArea">
+		<input type="submit" class="x_btn x_btn-primary" value="{$lang->cmd_registration}" accesskey="s" />
+	</div>
+</form>

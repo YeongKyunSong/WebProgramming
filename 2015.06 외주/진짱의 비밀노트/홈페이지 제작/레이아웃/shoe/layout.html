@@ -1,0 +1,84 @@
+<include target="_settings.html" />
+
+<p class="skipNav"><a href="#content" id="skip" tabindex="1">{$lang->skipnav}</a></p>
+
+<div id="cameron-body" class="ccs"|cond="$layout_info->ccs">
+	<header id="header-top" class="cw-container newclearfix">
+		<div class="shoe-container newclearfix">
+			<include cond="$header_nav->list" target="navigation_top.html" />
+			<div id="bookmark"><a href="javascript:bookmark_site('<!--@if(Context::getSiteTitle())-->{Context::getSiteTitle()}<!--@else-->{$module_info->browser_title}<!--@endif-->', '{getFullUrl()}')" id="fstar"><i class="fa fa-heart"></i> {$lang->bookmark}</a></div>
+			<include target="navigation_sign.html" />
+		</div>
+	</header>
+
+	<header id="header" class="cw-container newclearfix">
+		<div class="shoe-container header1-container newclearfix">
+			<div cond="$layout_info->banner" class="shoe-banner"><a href="{$layout_info->banner_link}" target="_blank"><img src="{$layout_info->banner}" /></a></div>
+			<div class="shoe-logo newclearfix">
+				<a href="{$logo_link}" id="logo" tabindex="2">
+					<!--@if($layout_info->logo)-->
+						<img src="{$layout_info->logo}" alt="{Context::getSiteTitle()}"|cond="$current_version > '1.7.0.0'" title="{Context::getSiteTitle()}"|cond="$current_version > '1.7.0.0'" style="margin-top:{$layout_info->logo_y}px"|cond="$layout_info->logo_y" />
+					<!--@else-->
+						<span class="shoe-logoi" title="{Context::getSiteTitle()}"|cond="$current_version > '1.7.0.0'"></span>
+					<!--@endif-->
+				</a>
+			</div>
+			<div class="isearch newclearfix">
+				<form action="{getUrl()}" method="get" no-error-return-url="true" id="isearch" class="newclearfix">
+					<input type="hidden" name="vid" value="{$vid}" />
+					<input type="hidden" name="mid" value="{$mid}" />
+					<input type="hidden" name="act" value="IS" />
+					<input type="hidden" name="where" value="{$where}" />
+					<input type="hidden" name="search_target" value="title_content" />
+					<input type="text" name="is_keyword" id="search_input" class="inputText" <!--@if($is_keyword)-->value="{$is_keyword}"<!--@elseif($layout_info->search_text)-->value="{$layout_info->search_text}"<!--@else--> placeholder="SEARCH..."<!--@endif--> />
+					<input type="submit" class="submit search_submit" value="" />
+				</form>
+			</div>
+		</div>
+		<div class="header2-container newclearfix">
+			<div class="shoe-container newclearfix">
+				<include target="navigation_global.html" />
+			</div>
+		</div>
+	</header>
+
+	<section id="contents" class="cw-container {$layout_info->layout_type}-contents newclearfix">
+		<div class="shoe-container newclearfix">
+			<div id="content" class="content">{$content}</div>
+		</div>
+	</section>
+	
+	<footer id="footer" class="cw-container newclearfix">
+		<div class="shoe-container footer-cont newclearfix">
+			<nav cond="$footer_nav->list" id="footer-nav">
+				<ul>
+					<li loop="$footer_nav->list=>$key,$val">
+						<a href="{$val['href']}" target="_blank"|cond="$val['open_window']=='Y'">{$val['link']}</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+
+	<footer id="site-info" class="cw-container newclearfix">
+		<div class="shoe-container newclearfix">
+			<div cond="$layout_info->site_info" class="site-info-img">
+				<img src="{$layout_info->site_info}" />
+			</div>
+			<a id="sTop2" href="#" title="Back to Top"><span class="sTop-arrow">▲</span><span class="sTop-text">TOP</span></a>
+		</div>
+	</footer>
+
+	<footer id="footer-bottom" class="cw-container newclearfix">
+		<div class="shoe-container newclearfix">
+			<div cond="$layout_info->footer_bottom" class="footer-bottom-img">
+				<img src="{$layout_info->footer_bottom}" />
+			</div>
+		</div>
+	</footer>
+</div>
+
+<div id="sButton">
+	<a id="sTop" href="#" title="Back to Top">XE{$current_version}</a>
+	<a id="sBottom" href="#" title="Back to Bottom">Layout{$layout_info->version}</a>
+</div>

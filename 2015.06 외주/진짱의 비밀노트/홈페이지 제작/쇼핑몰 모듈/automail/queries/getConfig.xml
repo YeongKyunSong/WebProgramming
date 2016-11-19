@@ -1,0 +1,13 @@
+<query id="getConfig" action="select">
+	<tables>
+		<table name="automail_config" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+    <conditions>
+        <condition operation="equal" column="config_srl" var="config_srl" />
+        <condition operation="equal" column="target_module" var="target_module" pipe="and" />
+        <condition operation="equal" column="config_key" var="config_key" pipe="and" />
+    </conditions>
+</query>

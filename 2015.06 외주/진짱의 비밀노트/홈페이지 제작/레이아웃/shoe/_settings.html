@@ -1,0 +1,61 @@
+{@ Context::set('admin_bar', 'false'); Context::addMetaTag('X-UA-Compatible', 'IE=edge', true); Context::set('current_version', __ZBXE_VERSION__); }
+{@ $browser_type = getenv("HTTP_USER_AGENT")}
+<!--@if(preg_match("/MSIE 8.0/",$browser_type))-->{@ $IE='8'; $oldIE='1'}<!--@else if(preg_match("/MSIE 7.0/",$browser_type))-->{@ $IE='7'; $oldIE='1'}<!--@else if(preg_match("/MSIE 6.0/",$browser_type))-->{@ $IE='6'; $oldIE='1'}<!--@endif-->
+
+{@ $layout_width = 1170; }
+<meta name="viewport" content="width=1200">
+
+<!--@if($IE!='7')-->
+{@ Context::addHtmlHeader('<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">'); }
+<!--@else-->
+{@ Context::addHtmlHeader('<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">'); }
+{@ Context::addHtmlHeader('<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">'); }
+<!--@endif-->
+
+<load target="css/layout.css" />
+
+<load target="lang" />
+
+<style cond="$layout_info->custom_css || $layout_info->ccs" type="text/css" id="settings">
+{$layout_info->custom_css}
+<include cond="$layout_info->ccs" target="css/ccs.css" />
+</style>
+
+{@ Context::loadJavascriptPlugin('ui'); }
+<load target="js/json2.js" type="body" targetie="IE 7" />
+<load target="js/jquery.textPlaceholder.js" type="body" />
+<load target="js/superfish.js" type="body" />
+<load target="js/supersubs.js" type="body" />
+<load target="js/layout.js" type="body" />
+
+{@
+	$__Context->global['cbrowser'] = 1;
+	$__Context->global['jqueryui'] = 1;
+}
+
+<block cond="!$layout_info->quick_width">{@ $layout_info->quick_width = '110'}</block>
+<block cond="!$layout_info->recent_thumb_width">{@ $layout_info->recent_thumb_width = '110'}</block>
+<block cond="!$layout_info->recent_thumb_height">{@ $layout_info->recent_thumb_height = '110'}</block>
+<block cond="!$layout_info->quick_left">{@ $layout_info->quick_left = 15}</block>
+{@ $quick_x = ($layout_width/2)+($layout_info->quick_width+$layout_info->quick_left); }
+
+<!--@if(!$layout_info->logo_link)-->{@ $logo_link = getFullUrl()}<!--@else-->{@ $logo_link = $layout_info->logo_link}<!--@endif-->
+
+<!--@if($category)-->
+<block loop="$global_nav->list=>$key1,$val1">
+	{@ $nav1st_ex = explode('category=',$val1['href']); $nav1st_cate = explode('&',$nav1st_ex[1]); }
+	<block cond="$category==$nav1st_cate[0]">{@ $selected1st = $key1}</block>
+	<block cond="$val1['list']">
+		<block loop="$val1['list']=>$key2,$val2">
+			{@ $nav2nd_ex = explode('category=',$val2['href']); $nav2nd_cate = explode('&',$nav2nd_ex[1]); }
+			<block cond="$category==$nav2nd_cate[0]">{@ $selected1st = $key1; $selected2nd = $key2}</block>
+			<block cond="$val2['list']">
+				<block loop="$val2['list']=>$key3,$val3">
+					{@ $nav3rd_ex = explode('category=',$val3['href']); $nav3rd_cate = explode('&',$nav3rd_ex[1]); }
+					<block cond="$category==$nav3rd_cate[0]">{@ $selected1st = $key1; $selected2nd = $key2; $selected3rd = $key3}</block>
+				</block>
+			</block>
+		</block>
+	</block>
+</block>
+<!--@endif-->

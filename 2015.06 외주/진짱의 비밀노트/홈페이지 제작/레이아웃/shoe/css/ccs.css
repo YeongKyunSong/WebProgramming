@@ -1,0 +1,66 @@
+/*--[LAYOUT]--*/
+#cameron-body.ccs #sf-menu-top ul li a:hover,
+#cameron-body.ccs #sf-menu-top ul li a:focus,
+#cameron-body.ccs #sf-menu-top ul li.sfHover a.nav2nd,
+#cameron-body.ccs #sf-menu-top ul ul li.sfHover a.nav3rd,
+#cameron-body.ccs #sf-menu-top ul ul ul li.sfHover a.nav4th{color:{$layout_info->ccs}}
+#cameron-body.ccs #sf-menu a.nav1st:hover,
+#cameron-body.ccs #sf-menu a.nav1st:focus,
+#cameron-body.ccs #sf-menu li:hover a.nav1st,
+#cameron-body.ccs #sf-menu li.current1 a.nav1st{color:{$layout_info->ccs}}
+#cameron-body.ccs #sf-menu ul li a:hover,
+#cameron-body.ccs #sf-menu ul li a:focus,
+#cameron-body.ccs #sf-menu ul li.sfHover a.nav2nd,
+#cameron-body.ccs #sf-menu ul li.current2 a.nav2nd,
+#cameron-body.ccs #sf-menu ul li.current3 a.nav3rd,
+#cameron-body.ccs #sf-menu ul li.current4 a.nav4th{color:{$layout_info->ccs}}
+#cameron-body.ccs .sf-arrows ul li > .sf-with-ul:hover:after,
+#cameron-body.ccs .sf-arrows ul li > .sf-with-ul:focus:after,
+#cameron-body.ccs .sf-arrows ul li:hover > .sf-with-ul:after{color:{$layout_info->ccs}}
+
+/*--[WIDGET]--*/
+/* ListOne Widget Skin */
+#cameron-body.ccs .shoe-notice li a:hover p,
+#cameron-body.ccs .shoe-notice li a:focus p{color:{$layout_info->ccs}}
+#cameron-body.ccs .shoe-notice li a:hover .title_arrow,
+#cameron-body.ccs .shoe-notice li a:focus .title_arrow{border-left-color:{$layout_info->ccs}}
+#cameron-body.ccs .shoe-notice li .num{color:{$layout_info->ccs}}
+
+/*--[PRODUCT]--*/
+/* nproduct Module Skin */
+#cameron-body.ccs .category-title .category-title-list li a:hover,
+#cameron-body.ccs .category-title .category-title-list li a:focus,
+#cameron-body.ccs .category-title .category-title-list li a.current{color:{$layout_info->ccs}}
+#cameron-body.ccs #item-list-title .category-list li a:hover,
+#cameron-body.ccs #item-list-title .category-list li a:focus,
+#cameron-body.ccs #item-list-title .category-list li a.current{color:{$layout_info->ccs}}
+#cameron-body.ccs .list-style a:hover,
+#cameron-body.ccs .list-style a:focus{color:{$layout_info->ccs}}
+#cameron-body.ccs #itemdetail .item-btn a.btn-buynow{background-color:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+#cameron-body.ccs .view_type1 td.review-btn #review-com{background:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+#cameron-body.ccs .view_type1 td.qna-btn #qna-com{background:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+#cameron-body.ccs .goto-section .goto-btn{background:{$layout_info->ccs}}
+/* ShopCarousel Widget Skin */
+#cameron-body.ccs .widget-ccs .owl-controls.clickable .owl-buttons > div:hover{background-color:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+
+/*--[PAYMENT]--*/
+/* ncart Module Skin */
+#cameron-body.ccs #total-price .go-payment{background-color:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+#cameron-body.ccs .addr-btn .addr-add-btn{background-color:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+#cameron-body.ccs #signin-form .signin-submit #siginin-btn{background:{$layout_info->ccs}}
+#cameron-body.ccs .complete-btn a.btn-home{border-color:{$layout_info->ccs}; color:{$layout_info->ccs}}
+#cameron-body.ccs .complete-btn a.btn-continue{background-color:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+/* nstore Module Skin */
+#cameron-body.ccs .back-btn a{background-color:{$layout_info->ccs}}
+#cameron-body.ccs #orderlist .info-table td.total-price{color:{$layout_info->ccs}}
+#cameron-body.ccs #orderlist .period td.period-date input.inquiry{background-color:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+#cameron-body.ccs #signin-form .signin-submit #siginin-btn{background:{$layout_info->ccs}}
+/* epay Module Skin */
+#cameron-body.ccs .payments td .gopay-btn{color:{$layout_info->ccs}}
+#cameron-body.ccs .cash-btn .cash-com-btn{background-color:{$layout_info->ccs}; border-color:{$layout_info->ccs}}
+
+/*--[MEMBER]--*/
+#cameron-body.ccs #signin-form .signin-submit #siginin-btn{background:{$layout_info->ccs}}
+#cameron-body.ccs #signin-form .signin-ex a:hover,
+#cameron-body.ccs #signin-form .signin-ex a:focus{color:{$layout_info->ccs}}
+#cameron-body.ccs #signup-form .signup-btn-area .signup-btn-submit{background:{$layout_info->ccs}; border-color:{$layout_info->ccs}}

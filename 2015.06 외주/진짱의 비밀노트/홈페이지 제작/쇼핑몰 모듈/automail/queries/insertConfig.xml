@@ -1,0 +1,15 @@
+<query id="insertConfig" action="insert">
+	<tables>
+		<table name="automail_config" />
+	</tables>
+	<columns>
+		<column name="config_srl" var="config_srl" filter="number" notnull="notnull" />
+		<column name="target_module" var="target_module" notnull="notnull" />
+		<column name="config_key" var="config_key" notnull="notnull" />
+		<column name="sender_name" var="sender_name" notnull="notnull" />
+		<column name="sender_email" var="sender_email" notnull="notnull" />
+		<column name="mail_title" var="mail_title" notnull="notnull" />
+		<column name="mail_content" var="mail_content" notnull="notnull" />
+		<column name="regdate" var="regdate" default="curdate()" />
+	</columns>
+</query>

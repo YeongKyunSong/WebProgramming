@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="bookmark">
+		<value xml:lang="ko"><![CDATA[즐겨찾기]]></value>
+		<value xml:lang="en"><![CDATA[BOOKMARK]]></value>
+	</item>
+	<item name="skipnav">
+		<value xml:lang="ko"><![CDATA[본문으로 바로가기]]></value>
+		<value xml:lang="en"><![CDATA[Skip to content]]></value>
+	</item>
+</lang>

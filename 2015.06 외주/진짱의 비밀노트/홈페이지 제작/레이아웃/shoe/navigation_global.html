@@ -1,0 +1,21 @@
+<nav id="main-nav" class="newclearfix">
+	<ul id="sf-menu">
+		<li loop="$global_nav->list=>$key1,$val1" cond="$val1['link']" class="current1{@ $current=1}"|cond="!$current && ($val1['selected'] || $selected1st==$key1)">
+			<a class="nav1st" href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
+			<block cond="$val1['selected']">{@$nav1st=$val1['text']}</block>
+			<ul cond="$val1['list']">
+				<li loop="$val1['list']=>$key2,$val2" cond="$val2['link']" class="current2"|cond="$val2['selected'] || $selected2nd==$key2">
+					<a class="nav2nd" href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'"><div class="li-line">{$val2['link']}</div></a>
+					<block cond="$val2['selected']">{@$nav2nd=$val2['text']}</block>
+					<ul cond="$val2['list']">
+						<li loop="$val2['list']=>$key3,$val3" cond="$val3['link']" class="current3"|cond="$val3['selected'] || $selected3rd==$key3">
+							<a class="nav3rd" href="{$val3['href']}" target="_blank"|cond="$val3['open_window']=='Y'"><div class="li-line">{$val3['link']}</div></a>
+							<block cond="$val3['selected']">{@$nav3rd=$val3['text']}</block>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		{@ $current=0}
+	</ul>
+</nav>
